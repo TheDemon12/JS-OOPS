@@ -112,8 +112,5 @@ Four Pillars of Object Oriented Programming
 
             Polymorphism: Refractor ugly switch-case statements.
 
-                
-
-
 
 */
