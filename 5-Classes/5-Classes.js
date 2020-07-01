@@ -92,7 +92,6 @@
         This will thus result in an error saying, sayGoodBye is nor defined. Function expressions are declared just like variables and constants which are not hoisted and thus we get the same 
         error.
         
-
         Now for Classes, we have two ways to define them as well
 
             Class Declaration
@@ -157,7 +156,6 @@
         Now, we can directly use the parse method on Circle class and provide a valid JSON object containing the radius property to it and then it will return a Circle object.
 
             const circle2 = Circle.parse('{"radius" : 1}')
-
 
         Libraries like 'Math' in JavaScript also uses static methods like abs, pow, exp, etc which can be used like
 
@@ -416,7 +414,7 @@
 
             const _props = new WeakMap()
 
-                    class Circle {
+            class Circle {
 
                 constructor(radius) {
                     this.radius = radius
@@ -606,69 +604,3 @@
 
 
 */
-
-// class Circle {
-// 	constructor(radius) {
-// 		let a = 1;
-// 		this.radius = radius;
-// 		this.move = function () {
-// 			console.log('move');
-// 		};
-// 	}
-
-// 	draw() {
-// 		console.log('draw', a);
-// 	}
-// }
-
-//
-// circle1.draw();
-
-// const _defaultLocation = Symbol();
-
-// class Circle {
-// 	constructor(radius) {
-// 		this.radius = radius;
-// 		this[_defaultLocation] = { x: 1, y: 1 };
-// 	}
-
-// 	draw() {
-// 		console.log('draw');
-// 	}
-// }
-
-// let circle1 = new Circle(1);
-
-// console.log(circle1[_defaultLocation]);
-
-// const _defaultLocation = new WeakMap();
-// const _changeLocation = new WeakMap();
-
-// class Circle {
-// 	constructor(radius) {
-// 		this.radius = radius;
-// 		_defaultLocation.set(this, { x: 1, y: 1 });
-// 	}
-
-// 	draw() {
-// 		let loc = _defaultLocation.get(this);
-// 	}
-// }
-
-const _radius = new WeakMap();
-
-class Circle {
-	constructor(radius) {
-		_radius.set(this, radius);
-	}
-
-	draw() {
-		console.log('draw');
-	}
-
-	get radius() {
-		return _radius.get(this);
-	}
-}
-
-let circle1 = new Circle(1);
